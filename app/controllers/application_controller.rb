@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   #privateは自分のコントローラ内でしか参照できないから、
   #呼び出された今回のコントローラではprotectedで参照する
